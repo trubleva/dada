@@ -1,0 +1,34 @@
+@import "../../../assets/styles/main.scss";
+@import "../../../assets/styles/abstracts/variables";
+
+.cardContainer {
+  display: flex;
+  border-bottom: 1px solid #979797;
+  margin: 10px 0;
+  padding: 12px 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+
+  .insightNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #394167;
+    color: #fff;
+    height: 25px;
+    min-width: 25px;
+    border-radius: 50%;
+    margin-right: 30px;
+    p {
+      color: white !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .cardContainer {
+    .insightTitle {
+      font-size: 20px;
+    }
+  }
+}

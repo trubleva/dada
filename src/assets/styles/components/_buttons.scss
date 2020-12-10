@@ -1,0 +1,26 @@
+@import '../abstracts/variables';
+
+.primaryBtn,
+.secondaryBtn {
+    height: 36px;
+    width: 141px;
+    border-radius: 5px;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.primaryBtn {
+    color: $deepPurple;
+    background-color: transparent;
+    border: 1.5px solid $deepPurple;
+    outline: none;
+}
+
+.secondaryBtn {
+    color: white;
+    outline: none;
+    background-color: $deepPurple;
+}

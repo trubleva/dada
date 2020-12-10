@@ -1,0 +1,98 @@
+@import "../../assets/styles/main.scss";
+
+.artContainer {
+  border-bottom: 1px solid #979797;
+  display: flex;
+  justify-content: space-between;
+
+  .artGrid {
+    display: grid;
+    grid-template-columns: 70px 68vw;
+    grid-template-rows: 50px 50px;
+    
+
+    .artTitle {
+      display: flex;
+      grid-column-start: 2;
+      grid-row-start: 1;
+      align-self: center;
+      padding-top: 20px;
+      font-size: 14px;
+
+    }
+    .artReadTime {
+      grid-column-start: 2;
+      grid-row-start: 2;
+      display: flex;
+      align-items: flex-start;
+      font-size: 12px;
+      padding-top: 12px;
+    }
+    .artImage {
+      display: flex;
+      grid-column-start: 1;
+      grid-row-start: span 2;
+      border-radius: 15%;
+      width: 63px;
+      height: 63px;
+      justify-self: left;
+      align-self: center;
+    }
+  }
+
+  .artBookmark {
+    color: orange;
+    height: 24px;
+    transform: scale(1, 1.3);
+    justify-self: end;
+    margin-top: 64px;
+  }
+
+  .rightChevron {
+    visibility: hidden;
+    color: $deepPurple;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .artContainer {
+    .artGrid {
+      grid-template-columns: 100px 70vw;
+
+      .artImage {
+        width: 76px;
+        height: 76px;
+      }
+      .artTitle {
+        font-size: 16px;
+      }
+    }
+
+  }
+  .rightChevron {
+    visibility: visible !important;
+    font-size: 30px;
+    margin-top: 60px;
+    color: $deepPurple;
+  }
+
+  @media only screen and (min-width: 1024px) {
+
+    .artContainer {
+      .artGrid {
+        grid-template-columns: 100px 70vw;
+
+      }
+    }
+
+
+
+  }
+
+
+
+
+
+
+
+}

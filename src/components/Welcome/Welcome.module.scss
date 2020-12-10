@@ -1,0 +1,75 @@
+@import '../../assets/styles/main.scss';
+@import '../../assets/styles/abstracts/variables';
+
+// #4BBFE8 card background
+.pageContainer {
+    align-items: center;
+
+    .chickCard {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(75, 191, 232, 0.2);
+        border-radius: 6px;
+        width: 80%;
+        height: 50vh;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-bottom: 20px;
+        margin-top: 30px;
+
+        .imageContainer {
+            margin-top: 10px;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
+
+    .secondaryBtn {
+        margin-top: 12.5vh;
+        width: 186px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 426px) {
+    .pageContainer {
+      width: 75vw;
+    
+        .chickCard {
+            height:50vh;
+        }
+
+        .imageContainer {
+            
+            img {
+                height: 200px;
+                width: auto;
+            }
+        }
+    }
+    
+  }
+
+ 
+  @media only screen and (min-width: 616px) {
+    .pageContainer {
+      width: 60vw;
+      
+      .secondaryBtn {
+        width: 325px;
+      }
+    }
+
+
+  }
+  
+  @media only screen and (min-width: 780px) {
+    .pageContainer {
+    width: 500px;
+  }
+  
+  }

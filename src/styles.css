@@ -1,0 +1,85 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Commissioner&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap"); */
+/* * {
+  box-sizing: border-box;
+  font-family: Nunito;
+  padding: 0;
+  margin: 0;
+} */
+
+/* body {
+  background-color: #FFF5F1;
+} */
+
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: Commissioner;
+  /* text-align: center; */
+  /* color: #F58764; */
+  /* padding: 10px; */
+/* } */ 
+
+/* img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  object-fit: cover;
+  display: flex;
+} */
+
+/* .roundedImg {
+  border-radius: 50%;
+  border: 1px solid black;
+} */
+
+/* p {
+  font-size: 1.5rem;
+  z-index: 1;
+} */
+
+/* button {
+  display: block;
+  width: 80%;
+  height: 50px;
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  position: relative;
+} */
+
+/* i {
+  font-size: 3rem;
+}
+
+ul {
+  font-size: 1.5rem;
+  position: absolute;
+} */
+
+/* li {
+  text-decoration: none;
+}
+
+form {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+} */
+
+/* input {
+  height: auto;
+  width: 90%;
+  border-radius: 10px;
+  color: gray;
+}
+
+nav {
+  display: flex;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+} */

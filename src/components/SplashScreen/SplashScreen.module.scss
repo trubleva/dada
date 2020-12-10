@@ -1,0 +1,321 @@
+@import "../../assets/styles/abstracts/variables";
+@import "../../assets/styles/main.scss";
+
+.noNav {
+  background-color: $offWhite;
+
+
+.splash {
+  z-index: 101;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+  background-color: $offWhite;
+  width: 90%;
+  margin: auto;
+  img {
+    width: 166px;
+  }
+  .primaryBtn {
+    height: 50px;
+    width: 95px;
+    margin: 0;
+    font-size: 16px;
+    color: $deepPurple;
+    font-weight: bold;
+  }
+}
+
+.leftGridForDesktop{
+  display: flex;
+  flex-direction: column;
+}
+.pageCont {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.sloganCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.slogan {
+  color: #1bb9f1;
+  font-family: Nunito;
+  font-weight: 800;
+  font-size: 25px;
+  width: 70%;
+  text-align: center;
+}
+
+.textUnderPhoneCont {
+  margin: 5%;
+  margin-top: 10%;
+}
+
+.textUnderPhone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  font-size: 21px;
+  width: 90%;
+  text-align: center;
+  color: $deepPurple;
+  margin: auto;
+}
+.forDad {
+  margin: 25px auto;
+  font-size: 18px;
+  color: #1bb9f1;
+  font-weight: 600;
+  text-align: center;
+}
+
+.phoneForTablet {
+  display: none;
+}
+
+.bold {
+  font-weight: 500;
+}
+.italics {
+  font-weight: 300;
+  font-style: italic;
+}
+.textFathers {
+  width: 82%;
+  text-align: center;
+  margin: 5% auto;
+  font-size: 14px;
+}
+.secondaryBtn {
+  margin: 25px auto;
+  font-size: 16px;
+  font-weight: bold;
+  width: 50vw;
+  padding: 16pt 16pt 16pt 16pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listTitle {
+  font-size: 21px;
+  font-family: IBM Plex, Nunito;
+}
+
+.svgTextLi {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    display: inline-block;
+    height: inherit;
+    margin: 10px 10px;
+  }
+}
+.rightGridForDesktop{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+
+p {
+  color: $deepPurple;
+  font-weight: 400;
+}
+
+h2 {
+  color: $deepPurple;
+  font-size: 21px;
+}
+.bottomTextCont {
+  background-color: #fffcdc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bottomCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.bottomText {
+  color: #394167;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 12px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .slogan {
+    font-size: 30px;
+    width: 100%;
+  }
+
+  .textUnderPhone {
+    font-size: 23px;
+    width: 70%;
+  }
+
+  .forDad {
+    font-size: 20px;
+  }
+
+  .textFathers{
+    font-size: 18px;
+    width: 65%;
+  }
+
+  .secondaryBtn {
+    width: 186px;
+    height: 45px;
+  }
+  
+  ul{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    margin: auto;
+    
+    .svgTextLi{
+      display: grid;
+      grid-template-rows: 3fr 1fr;
+      justify-content: center;
+      
+      img{
+        grid-row-start: 1;
+        display: flex;
+        align-self: flex-end;
+        justify-self: center;
+        height: 200px;
+
+      }
+      p {
+        align-self: flex-start;
+        grid-row-start: 2;
+        text-align: center;
+        font-size: 18px;
+        width: 85%;
+        margin: auto;
+      }
+    }
+  }
+  .needsReversing{ 
+    flex-direction: column;
+    color: pink;
+  }
+  .bottomCont{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 60%;
+    margin: 20px auto;
+  }
+
+  .bottomText{
+    text-align: center;
+  }
+
+  .phoneForTablet {
+    display: inline;
+  }
+
+  .phoneForMobile {
+    display: none;
+  }
+
+  .textUndePhoneCont {
+    margin: 5%;
+    margin-top: 5%;
+  }
+}
+}
+
+
+@media screen and (min-width: 1080px) {
+  .noNav {
+    
+    .splash{
+      .primaryBtn {
+        height: 33.75px;
+        width: 162px;
+      }
+    }
+
+  .gridForDesktop{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .rightGridForDesktop{
+      grid-column-start: 2;
+      grid-row-start: 1;
+      
+      .phoneForTablet{
+        height: 80%;
+      }
+    }
+    .leftGridForDesktop{
+      grid-column-start: 1;
+      grid-row-start: 1;
+
+      .secondaryBtn{
+        align-self: flex-start;
+        margin-top: 40px;
+        margin-left: 10%;
+      }
+    }
+  }
+  
+  .textUnderPhone{
+    text-align: left;
+    font-size: 27px;
+    width: 80%;
+  }
+
+  .forDad{
+    text-align: left;
+    margin: 35px auto;
+    width: 80%;
+    font-size: 22.5px;
+  }
+
+  .textFathers {
+    font-size: 18px;
+    text-align: left;
+    margin: auto;
+    width: 80%;
+  }
+
+  .listTitle {
+    display: none;
+  }
+
+  ul{ 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+      .svgTextLi{
+        grid-template-rows: 2fr 1fr;
+      img{
+        width: 170px;
+      }
+      p {
+        height: 100px;
+      }
+    }
+  }
+}
+}

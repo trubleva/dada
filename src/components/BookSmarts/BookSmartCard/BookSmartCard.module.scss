@@ -1,0 +1,160 @@
+@import "../../../assets/styles/abstracts/variables";
+@import "../../../assets/styles/main.scss";
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 110px;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+
+  .bookInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+
+    .bookSmartInfo {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .bookTitle {
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 0;
+      }
+
+      .bookAuthor {
+        font-size: 0.6rem;
+        padding-top: 7px;
+        margin-top: 10px;
+      }
+    }
+
+    .bookSmartVotes {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-bottom: 5px;
+      margin-bottom: 0px;
+      margin-top: 15px;
+
+      .voteIcon {
+        opacity: 1.0;
+        transition: 0.2s;
+        padding-right: 10px;
+        cursor: pointer;
+        color: $deepPurple;
+
+        &:hover {
+          color: $beakOrange;
+          opacity: 1;
+        }
+      }
+      .voteIcon:nth-child(1) {
+        &:hover {
+          color: $beakOrange;
+          opacity: 1;
+        }
+      }
+      .voteCounter {
+        padding-right: 10px;
+        font-weight: 300;
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .bookSmartImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin: 15px 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .rightChevron {
+    visibility: hidden;
+    font-size: 0;
+  }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  .cardContainer {
+    height: 150px;
+
+    .bookInfoContainer {
+      width: 650px;
+
+      .bookSmartInfo {
+        width: 500px;
+
+        .bookTitle {
+          font-size: 20px;
+          padding-top: 5px;
+        }
+
+        .bookAuthor {
+          font-size: 16px;
+          padding-top: 10px;
+        }
+      }
+
+      .bookSmartVotes {
+        display: inline-flex;
+        bottom: 0;
+        align-items: center;
+        width: 60px;
+        margin-bottom: 0;
+
+        .voteIcon {
+          font-size: 19px;
+        }
+
+        .voteCounter {
+          font-size: 14px;
+        }
+      }
+    }
+
+      .bookSmartImage {
+        height: 150px;
+        width: 140px;
+        margin-top: 0px;
+        img {
+          height: 140px;
+          width: auto;
+          padding-bottom: 10px;
+        }
+      }
+    
+    .rightChevron {
+      visibility: visible;
+      display: flex;
+      font-size: 35px;
+      height: 150px;
+      width: 80px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .bookInfoContainer {
+    min-width: 750px;
+    }
+
+}

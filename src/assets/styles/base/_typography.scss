@@ -1,0 +1,40 @@
+@import "../abstracts/_variables.scss";
+
+// Option 3. Import Nunito Font from Google Fonts for all
+// @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+// Font-Families
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Nunito&display=swap');
+
+/* Nunito 
+    font-weights: 400 (regular), 700 (regular), 800 (extra bold)
+*/
+/* IBM Plex Sans 
+    font-weights: 400 (regular), 500 (medium),  700 (regular)
+*/
+
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+h1{ 
+    font-size: $h1FontSize;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: $h2FontSize;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: $h3FontSize;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: $h4FontSize;
+    font-weight: 400;
+}

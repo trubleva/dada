@@ -1,0 +1,173 @@
+@import '../../../assets/styles/abstracts/variables';
+@import '../../../assets/styles/main.scss';
+
+.formContainer {
+  height: 100vh;
+  
+  h2 {
+    font-weight: 700;
+    text-align: center;
+    padding-top: 13vh;
+    font-size: 25px;
+  }
+  
+  .signUpBtn {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    background-color: $deepPurple;
+    height: 47px;
+    border: none;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    &:hover{
+      background: $lightBlue;
+      color: $offWhite;
+    }
+  }
+
+  p {
+    font-size: 12px;
+    
+    span {
+      font-weight: 700;
+    }
+  }
+  
+  .termsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    height: 50px;
+
+    input {
+      margin-right: 5px;
+      height: 10px;
+      border-radius: 30px;
+    }
+  }
+
+  .logIn {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+      
+  .orSignIn{
+    margin-top: 10px;
+
+    text-align: center;
+    margin-bottom: 15px;
+    color: #074B77;
+  }
+}
+@media only screen and (min-width: 426px) {
+  .formContainer {
+    width: 65vw;
+  }
+  
+}
+
+@media only screen and (min-width: 720px) {
+  .formContainer {
+    width: 55vw;
+  }
+  
+}
+
+@media only screen and (min-width: 768px) {
+  .formContainer {
+  width: 500px;
+  padding-top: 15vh;
+}
+
+}
+//     .content {
+//       display: flex;
+//       flex-direction: column;
+//       padding-top: 0px;
+//       .terms {
+//           font-size: 11px;
+//           // padding: 20px 0px;
+//           text-align: center;
+//       }
+//       .orSignIn {
+//         font-size: 16px;
+//         // padding: 20px 0px;
+//         text-align: center;
+//       }
+//       .form {
+//         margin-top: 2em;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         padding-top: 0px;
+
+//         .formGroup {
+//           display: flex;
+//           flex-direction: column;
+//           align-items: flex-start;
+//           width: fit-content;
+//           padding-top: 10px;
+//           label {
+//             font-size: 20px;
+//           }
+//           input {
+//             margin-top: 6px;
+//             min-width: 18em;
+//             height: 37px;
+//             padding: 0px 10px;
+//             font-size: 16px;
+//             font-family: "Open Sans", sans-serif;
+//             background-color: none;
+//             border: solid 1px black;
+//             border-radius: 4px;
+//             margin-bottom: 0px;
+//             transition: all 250ms ease-in-out;
+//             width: 100%;
+//           }
+//             &:focus {
+//               outline: none;
+//               box-shadow: 0px 0px 12px 0.8px #3474dbb2;
+//           }
+//         }
+//       }
+//     }
+  
+//     .footer {
+//       margin: 0px auto;
+//       padding-top: 10px;
+//     }
+//   }
+
+//   //Button
+// .btn {
+//     font-size: 21px;
+//     padding: 5px 20px;
+//     border: solid 1px black;
+//     background-color: white;
+//     width: 100%;
+//     color: black;
+//     transition: all 250ms ease-in-out;
+//     cursor: pointer;
+//     &:focus {
+//         outline: none;
+//         box-shadow: 0px 0px 12px 0.8px #3474dbb2;
+//       }
+//   }
+  
+// }

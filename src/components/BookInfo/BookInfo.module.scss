@@ -1,0 +1,137 @@
+@import "../../assets/styles/abstracts/variables";
+@import "../../assets/styles/main.scss";
+@import "../../assets//styles/layout/header";
+.smHeader{
+    box-shadow:0px 2px 2.62px rgba(0, 0, 0, 0.23);
+    border-bottom: 10px solid #A0EBE7;
+    h1{
+        color:#394167;
+    }
+}
+
+.pageContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 40px;
+
+  .bookOverview {
+    .aboutBook {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 15px;
+
+      .bookCover {
+        background-color: grey;
+        margin-right: 30px;
+        height: 170px;
+        width: 120px;
+
+        img {
+          width: 120px;
+          height: 100%;
+        }
+      }
+
+      .bookContentOverview {
+        h2 {
+          font-size: 16px;
+          font-weight: 700;
+          padding: 0px;
+        }
+
+        .bookAuthor {
+          font-size: 12px;
+          font-weight: 500;
+          padding-top: 5px;
+        }
+      }
+    }
+    .bookBlurb {
+      padding: 15px 0px 15px 0px;
+    }
+    .overviewFooter {
+      display: flex;
+      flex-direction: row;
+      font-size: 12px;
+      border-top: 1px solid #979797;
+      border-bottom: 1px solid #979797;
+      padding: 15px 0;
+      justify-content: space-between;
+
+      .readTime {
+        padding-right: 20px;
+      }
+    }
+
+    .aboutAuthor {
+      padding: 20px 0;
+
+      h3 {
+        font-size: 14px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  .keyInsights {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+
+    h3 {
+      font-size: 14px;
+    }
+
+    .keyInsightCard {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .pageContainer {
+    .bookOverview {
+      .aboutBook {
+        .bookCover {
+          height: 218px;
+          width: 142px;
+
+          img {
+            width: 142px;
+          }
+        }
+
+        .bookContentOverview {
+          h2 {
+            font-size: 20px;
+          }
+
+          .bookAuthor {
+            font-size: 16px;
+          }
+        }
+      }
+      .bookBlurb {
+        font-size: 20px;
+      }
+      .overviewFooter {
+        .readTime {
+          font-size: 16px;
+        }
+      }
+      .aboutAuthor {
+        font-size: 20px;
+      }
+    }
+    .keyInsights {
+      font-size: 20px;
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+}

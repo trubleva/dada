@@ -1,0 +1,118 @@
+@import "../../assets/styles/abstracts/variables";
+@import "../../assets/styles/main.scss";
+
+.smHeader {
+  box-shadow: none;
+}
+.pageContainer {
+  .gridContainer {
+    .card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 14vh;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      margin-bottom: 20px;
+
+      &:nth-child(1) {
+        background-color: $paleYellow;
+        margin-top: 20px;
+      }
+      &:nth-child(2) {
+        background-color: $palePurple;
+      }
+      &:nth-child(3) {
+        background-color: $paleGreen;
+      }
+      &:nth-child(4) {
+        background-color: $paleBlue;
+      }
+
+      .titleSubheaderContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        border-radius: 20px;
+        padding-left: 20px;
+        color: $deepPurple;
+
+        h2 {
+          font-family: "Nunito", sans-serif;
+          font-weight: 700;
+          padding: 0;
+          padding-bottom: 10px;
+        }
+
+        .cardSubHeader {
+          font-weight: 500;
+          font-size: 0.85rem;
+          font-weight: 200;
+          line-height: 1.2rem;
+        }
+      }
+      .image {
+        display: flex;
+        justify-content: flex-end;
+        img {
+          width: 110px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+
+  .pageContainer {
+    .gridContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 2vw;
+  .card {
+    height: 35vh;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-bottom: 20px;
+    &:nth-child(1) {
+      background-color: $paleYellow;
+      margin-top: 0px;
+    }
+    .titleSubheaderContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      border-radius: 20px;
+      padding: 20px;
+      color: $deepPurple;
+
+      h2 {
+        font-family: "Nunito", sans-serif;
+        font-weight: 700;
+        padding: 0;
+        padding-bottom: 10px;
+      }
+
+      .cardSubHeader {
+        font-weight: 500;
+        font-size: 0.85rem;
+        font-weight: 200;
+        line-height: 1.2rem;
+      }
+    }
+    .image {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
+  }
+}

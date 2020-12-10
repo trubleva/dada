@@ -1,0 +1,36 @@
+@import "../../assets/styles/main.scss";
+
+.smHeader {
+  background-color: white;
+  border-bottom: 10px solid $icyPurple;
+}
+
+.btnContainer {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  button {
+    width: 45vw;
+    margin: 0 5px;
+
+    @media only screen and (max-width: 1024px) {
+      width: 45vw;
+      margin: 0 5px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      width: 45vw;
+      margin: 0 5px;
+    }
+  }
+}
+.selectedBtn{ 
+    color: green;
+}
+//need it to be:
+//lighter when not selected
+//darker when selected
+
+

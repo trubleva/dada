@@ -1,0 +1,54 @@
+.bold {
+  font-weight: bold;
+}
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #979797;
+  width: inherit;
+}
+
+.flexItem {
+  width: 50%;
+  margin: 5px;
+
+  img {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+}
+
+.tantrumsNextTitle {
+  margin-top: 15px;
+}
+
+.whyTantrumsHappenUl {
+  list-style-type: none;
+  li {
+    background: url("../../../assets/img/Lightbulb.svg") no-repeat 4px 25px;
+    padding: 20px 0 20px 0;
+    padding-left: 40px;
+  }
+}
+
+.prepareUl {
+  list-style-type: none;
+
+  li {
+    background: url("../../../assets/img/BulletPoint.svg") no-repeat 12px 9px;
+    margin: 20px 0 20px 0;
+    padding-left: 40px;
+  }
+}
+
+.smallText {
+  font-weight: 500;
+  color: #4d4c4b;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.upYourGameTitle{
+  margin-bottom: 25px;
+}

@@ -1,0 +1,87 @@
+@import "../../assets/styles/main.scss";
+@import "../../assets/styles/abstracts/variables";
+
+.smHeader {
+  background-color: white;
+  border-bottom: 10px solid $sunnyYellow;
+}
+
+.pageContainer {
+  .btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .primaryBtn,
+    .secondaryBtn {
+      margin-top: 0;
+      width: 45vw;
+      margin: 0 5px;
+      height: 45px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+  .filterTagsContainer {
+    .filterTags {
+      display: flex;
+      list-style-type: none;
+      white-space: nowrap;
+      overflow: scroll;
+      margin-top: 10px;
+      font-size: 10px;
+      font-family: Nunito;
+
+      li {
+        display: inline-block;
+        padding: 5px 8.5px;
+      }
+
+      .filterOn {
+        font-weight: bold;
+        border-bottom: 5px solid orange;
+      }
+    }
+    .filterTags::-webkit-scrollbar {
+      display: none;
+    }
+    .filterTags {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+}
+
+// tablet view
+@media only screen and (min-width: 768px) {
+
+  .pageContainer {
+    .btnContainer {
+      .primaryBtn,
+      .secondaryBtn {
+        width: 45vw;
+        margin: 0 5px;
+      }
+    }
+    .filterTagsContainer{
+      .filterTags{
+               justify-content: space-evenly;
+      }
+    }
+  }
+}
+
+// landscape tablet view
+@media only screen and (min-width: 1024px) {
+  .pageContainer {
+    .btnContainer {
+      .primaryBtn,
+      .secondaryBtn {
+        width: 45vw;
+        margin: 0 5px;
+      }
+    }
+  }
+}
+  

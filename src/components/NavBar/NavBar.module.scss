@@ -1,0 +1,49 @@
+@import "../../assets/styles/abstracts/variables";
+@import "../../assets/styles/main.scss";
+
+.navWrapper {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  background-color: transparent;
+  height: 10vh;
+  z-index: 100;
+
+  .globalNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 10vh;
+    margin: 0 auto;
+
+    .faContainer {
+      display: flex;
+      justify-content: space-between;
+
+      .backButton {
+        font-size: 1.4rem;
+        color: $deepPurple;
+      }
+
+      .search {
+        font-size: 1.4rem;
+        color: $deepPurple;
+      }
+
+      .ellipses {
+        font-size: 1.4rem;
+        color: $deepPurple;
+        margin-left: 5vw;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

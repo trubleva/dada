@@ -1,0 +1,21 @@
+.inputWrapper {
+  position: relative;
+}
+.inputWrapper input {
+  margin: 2.3vh 0px;
+  padding-left: 15px;
+  width: 100%;
+  height: 7vh;
+  border-radius: 5px;
+  border: 1px solid gray;
+  color: black;
+  font-size: 1rem;
+  position: relative;
+}
+.inputWrapper input::placeholder {
+  transition: 0.2s;
+}
+.inputWrapper input:focus::placeholder {
+  transform: translate(0px, -15px);
+  font-size: 0.5rem;
+}

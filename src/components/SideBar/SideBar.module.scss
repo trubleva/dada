@@ -1,0 +1,118 @@
+@import "../../assets/styles/abstracts/variables";
+@import "../../assets/styles/main.scss";
+
+.sideBarContainer.popOut {
+    transform: translateX(0%);
+}
+
+.sideBarContainer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    // left: 40%;
+    background-color: #394167;
+    color: $offWhite;
+    width: 225px;
+    height: 100vh;
+    opacity: 0.9;
+    padding: 20px;
+    z-index: 10;
+    transition: transform 0.8s ease;
+    transform: translateX(100%);
+
+    .buttonContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 50px;
+        margin-bottom: 20px;
+
+        .signUpBtn,
+        .loginBtn {
+            width: 90px;
+            height: 45px;
+            border-radius: 5px;
+            font-weight: 700;
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .signUpBtn {
+            border: 1px solid white;
+            color: black;
+        }
+
+        .loginBtn {
+            background-color: transparent;
+            border: 1px solid $offWhite;
+            color: $offWhite;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+
+    .appPathLinks {
+        margin-top: 20px;
+
+        .appPathItems {
+            .pathItems {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 25px 0;
+                margin-left: 15px;
+
+                img {
+                    width: 15%;
+                }
+
+                p {
+                    padding-left: 40px;
+                    color: $offWhite;
+                }
+            }
+        }
+        .appInfoItems {
+            margin-top: 80px;
+
+            .infoItems {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 25px 0;
+                margin-left: 15px;
+
+                img {
+                    width: 12%;
+                }
+
+                p {
+                    padding-left: 40px;
+                    color: $offWhite;
+                }
+            }
+        }
+    }
+    .sideBarFooter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: absolute;
+        bottom: 80px;
+        left: 30px;
+        font-size: 1.2rem;
+
+        img {
+            padding-right: 15px;
+        }
+
+        p {
+            color: $offWhite;
+        }
+    }
+}

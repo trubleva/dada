@@ -1,0 +1,15 @@
+@import "../../assets/styles/main.scss";
+
+.vidListContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+@media only screen and (min-width: 768px) {
+  .vidListContainer {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-gap: 0px 20px;
+  }
+}

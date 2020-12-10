@@ -1,0 +1,64 @@
+
+
+
+.formContainer {
+margin-top: 10vh;
+height: 40vh;
+
+    h2 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 5vh;
+    }
+
+    div{
+    padding: none;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    margin: 3vh;
+    h3 {
+        margin: 1vh;
+        width: 80%;
+    }
+    img {
+        margin: 0;
+        width: 25px;
+    }
+}
+}
+.chickInfo{
+    display: flex;
+    flex-direction: row;
+    border: none;
+    h3{
+        text-align: center;
+    }
+    div {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 426px) {
+    .formContainer {
+    width: 65vw;
+}
+
+}
+
+@media only screen and (min-width: 720px) {
+    .formContainer {
+    width: 55vw;
+}
+
+}
+
+@media only screen and (min-width: 780px) {
+    .formContainer {
+    width: 500px;
+}
+
+}
+

@@ -1,0 +1,48 @@
+@import "../../assets/styles/main.scss";
+
+.pageContainer {
+  align-items: center;
+  height: 100vh;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20vh;
+  }
+
+  .ageClicker {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5vh;
+
+    button {
+      outline-color: #4bbfe8;
+      width: 3rem;
+      height: 3rem;
+      background-color: #a0ebe7;
+      color: $black;
+      font-size: 2rem;
+      border: 1px solid #a0ebe7;
+      line-height: 1rem;
+    }
+    .minusButton {
+      padding-bottom: 0.5rem;
+    }
+
+    .ageNumber {
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 0.5rem 1rem 0 1rem;
+    }
+  }
+
+  .secondaryBtn {
+    width: 186px;
+    height: 45px;
+    font-size: 16px;
+    margin-top: 15vh;
+  }
+}

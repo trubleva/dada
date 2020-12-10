@@ -1,0 +1,66 @@
+@import "../../assets/styles/main.scss";
+@import "../../assets/styles/abstracts/variables";
+
+.smHeader {
+  background-color: white;
+  border-bottom: 10px solid $sunnyYellow;
+}
+
+.pageContainer {
+  .btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .primaryBtn,.secondaryBtn {
+      margin: 0 5px;
+      width: 45vw;
+      height: 45px;
+      font-size: 16px;
+      font-weight: 700;
+
+      @media only screen and (max-width: 768px) {
+        width: 45vw;
+        margin: 0 5px;
+      }
+    }
+  }  
+  .filterTagsContainer {
+
+    .filterTags {
+      display: flex;
+      justify-content: space-evenly;
+      list-style-type: none;
+      white-space: nowrap;
+      overflow: scroll;
+      margin-top: 30px;
+      font-size: 10px; 
+      font-family: Nunito; 
+
+      @media only screen and (max-width: 768px) {
+            justify-content: space-evenly;
+      }
+
+      li {
+        display: inline-block;
+        padding: 5px 8.5px;
+      }
+
+      .filterOn {
+        font-weight: bold;
+        border-bottom: 5px solid orange;
+  
+      }
+    }
+    .filterTags::-webkit-scrollbar {
+      display: none;
+    }
+    .filterTags {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+ 
+
+}

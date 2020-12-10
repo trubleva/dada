@@ -1,0 +1,41 @@
+@import "../../../assets/styles/main.scss";
+.whatNotToDo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.whatNotToDoUl {
+  list-style-type: none;
+  li {
+    background: url("../../../assets/img/XBulletPoint.svg") no-repeat left top;
+    margin: 20px 0 20px 0;
+    padding-left: 40px;
+  }
+}
+.tryThisUl {
+  list-style-type: none;
+
+  li {
+    background: url("../../../assets/img/BulletPoint.svg") no-repeat 12px 50%;
+    margin: 20px 0 20px 0;
+    padding-left: 40px;
+  }
+}
+.circle {
+  font-size: 0.5rem;
+  margin-bottom: 0.5px;
+}
+.tantrumsNextTitle {
+  margin-top: 30px;
+}
+.bottomBtn {
+  color: white;
+  height: 36px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  background-color: #394167;
+  margin-bottom: 30px;
+}

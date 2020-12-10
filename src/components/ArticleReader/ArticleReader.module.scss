@@ -1,0 +1,115 @@
+@import "../../assets/styles/main.scss";
+
+
+.smHeader {
+  background-color: $lightBlue;
+  color: white;
+}
+
+.readerContent {
+  
+  .headingContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      font-size: 1.2rem;
+      padding-bottom: 1rem;
+    }
+
+    .artBookmark {
+      font-size: 2rem;
+      color: $orange;
+    }
+  
+  }
+  .authorSection {
+    display: flex;
+
+    .readerAuthorImage {
+      height: 4rem;
+      width: 4rem;
+      border: 3px solid white;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .byLine {
+      padding: 6px 0 0 10px;
+      margin-left: 5px; 
+
+      .authorName {
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.45);
+        // grey colour for by-line text
+        padding-bottom: 0.4rem;
+      }
+
+      .date {
+        color: rgba(0, 0, 0, 0.45);
+        // grey colour for by-line text
+
+        font-weight: 100;
+      }
+
+      p {
+
+        padding: 0;
+        font-weight: 600;
+      }
+    }
+
+  }
+
+  .mainBody {
+
+    font-family: IBM Plex, Nunito;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0 5% 0;
+    line-height: 1.5rem;
+
+    p {
+      padding: 0.5rem 0 0.5rem 0 ;
+    }
+
+    h3 {
+      font-weight: 700;
+      padding: 0.5rem 0 0.25rem 0;
+    }
+
+  }
+
+
+
+}
+
+
+.relatedSection {
+  padding-bottom: 4.5rem;
+  .relatedHeading {
+    padding-bottom: 20px;
+    hr {
+      border-top: 3px solid rgba(0, 0, 0, 0.3);
+    }
+  }
+  .relatedGrid {
+    display: grid;
+    grid-template-columns: repeat( 2, minmax(160px, 1fr) );  
+    grid-gap: 20px; 
+    .relatedImage {
+      height: 120px;
+      width: 160px;
+      object-fit: cover;
+      border-radius: 1rem;
+      padding-bottom: 10px;
+    }
+    .relatedArticleTitle {
+      font-weight: 600;
+      padding-bottom: 6px;
+    }
+    p {
+      padding-bottom: 6px;
+    }
+  }
+}

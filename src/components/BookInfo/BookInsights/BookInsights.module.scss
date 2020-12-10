@@ -1,0 +1,67 @@
+@import "../../../assets/styles/abstracts/variables";
+@import "../../../assets/styles/main.scss";
+
+.smHeader {
+  box-shadow: 0px 2px 2.62px rgba(0, 0, 0, 0.23);
+  border-bottom: 10px solid #a0ebe7;
+  color:#394167;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 85vh;
+  margin: 10px auto 0 auto;
+  padding-bottom: 0px;
+
+  .pageContent {
+    .paragraph {
+      font-size: 14px;
+    }
+  }
+
+  .btnContainer {
+    .secondaryBtn {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  
+  .pageContainer {
+    height: 85vh;
+    margin: 20px auto 0 auto;
+    padding-bottom: 0px;
+
+    .paragraph {
+      font-size: 28px;
+    }
+  }
+  
+  .btnContainer {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    .secondaryBtn {
+      font-size: 18px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .pageContainer {
+    margin: 20px auto 0 auto;
+    padding-bottom: 0px;
+  }
+
+  .btnContainer {
+    padding-bottom: 10px;
+    .secondaryBtn {
+      font-size: 18px;
+    }
+  }
+}
