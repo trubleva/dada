@@ -45,13 +45,13 @@ const BottomNavBar = (props) => {
     const setPageIconToActive = () => {
         if (window.location.pathname === "/categories") {
             setSwitchHomeIcon(true);
-        } else if (window.location.pathname.startsWith("/categories/activity-ideas")) {
+        } else if (window.location.pathname.includes("/categories/activity-ideas")) {
             setSwitchActivityIcon(true);
-        } else if (window.location.pathname.startsWith("/categories/sos")) {
+        } else if (window.location.pathname.includes("/categories/sos")) {
             setSwitchSOSIcon(true);
-        } else if (window.location.pathname.startsWith("/categories/book-smarts")) {
+        } else if (window.location.pathname.includes("/categories/book-smarts")) {
             setSwitchBookSmartsIcon(true);
-        } else if (window.location.pathname.startsWith("/categories/up-your-game")) {
+        } else if (window.location.pathname.includes("/categories/up-your-game")) {
             setSwitchUYGIcon(true);
         }
     }
