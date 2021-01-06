@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import styles from './BottomNavBar.module.scss';
 import { ReactComponent as HomeIcon } from '../../assets/img/BottomNavBar/HomeIcon.svg';
 import { ReactComponent as ActivitiesIcon } from "../../assets/img/BottomNavBar/ActivitiesIcon.svg";
@@ -10,11 +10,11 @@ import { navigate } from "@reach/router";
 const BottomNavBar = (props) => {
 
     // State change to switch between different SVG states on click
-    const [ switchHomeIcon, setSwitchHomeIcon ] = useState(false);
-    const [ switchActivityIcon, setSwitchActivityIcon ] = useState(false);
-    const [ switchSOSIcon, setSwitchSOSIcon ] = useState(false);
-    const [ switchBookSmartsIcon, setSwitchBookSmartsIcon ] = useState(false);
-    const [ switchUYGIcon, setSwitchUYGIcon ] = useState(false);
+    const [ switchHomeIcon, setSwitchHomeIcon ] = useState();
+    const [ switchActivityIcon, setSwitchActivityIcon ] = useState();
+    const [ switchSOSIcon, setSwitchSOSIcon ] = useState();
+    const [ switchBookSmartsIcon, setSwitchBookSmartsIcon ] = useState();
+    const [ switchUYGIcon, setSwitchUYGIcon ] = useState();
 
     // Functions to fill / defill SVG's 
     const toggleHomeIcon = switchHomeIcon ? styles.toggled : "";
@@ -22,6 +22,43 @@ const BottomNavBar = (props) => {
     const toggleSOSIcon = switchSOSIcon ? styles.toggled : "";
     const toggleBookSmartsIcon = switchBookSmartsIcon ? styles.toggled : "";
     const toggleUYGIcon = switchUYGIcon ? styles.toggled : "";
+
+    // MB Jan 20 - existing code for navbar icon state won't work as it is 
+    // just toggling the state. We should defill all icons first 
+    // and then fill the selected icon.
+
+    // MB Jan 20 - Defill all navbar icons
+    const setAllNavBarIconsToInactive = () => {
+        setSwitchHomeIcon(false);
+        setSwitchActivityIcon(false);
+        setSwitchSOSIcon(false);
+        setSwitchBookSmartsIcon(false);
+        setSwitchUYGIcon(false);
+    }
+
+    // MB Jan 20 - we also need to check url and set relevant icon to active 
+    // as the re-render resets them all to false, unfilled
+    // It would be possible to just set whether an icon was 'active' based 
+    // on the page and rely on &:hover - but I think that may lead to the icon 
+    // being unfilled if a page takes a while to load for some reason.
+    const setPageIconToActive = () => {
+        if (window.location.pathname === "/categories") {
+            setSwitchHomeIcon(true);
+        } else if (window.location.pathname.includes("/categories/activity-ideas")) {
+            setSwitchActivityIcon(true);
+        } else if (window.location.pathname.includes("/categories/sos")) {
+            setSwitchSOSIcon(true);
+        } else if (window.location.pathname.includes("/categories/book-smarts")) {
+            setSwitchBookSmartsIcon(true);
+        } else if (window.location.pathname.includes("/categories/up-your-game")) {
+            setSwitchUYGIcon(true);
+        }
+    }
+
+    useEffect(() => {
+        setPageIconToActive()
+      },[])
+
 
     // Navigation functions to key categories
     const navigateToCategories = () => {
@@ -44,35 +81,40 @@ const BottomNavBar = (props) => {
     <div className={styles.navBarContainer}>
         <div className={styles.iconContainer}>
             <HomeIcon className={`${styles.navBarIcons} ${toggleHomeIcon}`} onClick={() => {
-                setSwitchHomeIcon(!switchHomeIcon)
+                setAllNavBarIconsToInactive()
+                setSwitchHomeIcon(true)
                 navigateToCategories()
             }} 
             />
         </div>
         <div className={styles.iconContainer}>
             <ActivitiesIcon className={`${styles.navBarIcons} ${toggleActivityIcon}`} onClick={() => {
-                setSwitchActivityIcon(!switchActivityIcon)
+                setAllNavBarIconsToInactive()
+                setSwitchActivityIcon(true)
                 navigateToActivityIdeas()
             }} 
             />
         </div>
         <div className={styles.iconContainer}>
             <SOSNavIcon className={`${styles.navBarIcons} ${toggleSOSIcon}`} onClick={() => {
-                setSwitchSOSIcon(!switchSOSIcon)
+                setAllNavBarIconsToInactive()
+                setSwitchSOSIcon(true)
                 navigateToSOS()
             }} 
             />
         </div>
         <div className={styles.iconContainer}>
             <BookSmartsNavIcon className={`${styles.navBarIcons} ${toggleBookSmartsIcon}`} onClick={() => {
-                setSwitchBookSmartsIcon(!switchBookSmartsIcon)
+                setAllNavBarIconsToInactive()
+                setSwitchBookSmartsIcon(true)
                 navigateToBookSmarts()
             }} 
             />
         </div>
         <div className={styles.iconContainer}>
             <UYGNavIcon className={`${styles.navBarIcons} ${toggleUYGIcon}`} onClick={() => {
-                setSwitchUYGIcon(!switchUYGIcon)
+                setAllNavBarIconsToInactive()
+                setSwitchUYGIcon(true)
                 navigateToUYG()
             }} 
             />
