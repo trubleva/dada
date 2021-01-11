@@ -11,6 +11,7 @@ const ActivityIdeas = (props) => {
 
   const user = props.user;
 
+    // testing deploy
 
   const showClickedList = toggleList ?
     <VideoList filterChosen={filterChosen} user={user} /> :
