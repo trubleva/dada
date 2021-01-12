@@ -11,6 +11,7 @@
   background-color: transparent;
   height: 10vh;
   z-index: 100;
+  background-color: $deepPurple;
 
   .globalNav {
     display: flex;
@@ -27,17 +28,18 @@
 
       .backButton {
         font-size: 1.4rem;
-        color: $deepPurple;
+        color: $backgroundColor;
+        cursor: pointer;
       }
 
       .search {
         font-size: 1.4rem;
-        color: $deepPurple;
+        color: $backgroundColor;
       }
 
       .ellipses {
         font-size: 1.4rem;
-        color: $deepPurple;
+        color: $backgroundColor;
         margin-left: 5vw;
 
         &:hover {
