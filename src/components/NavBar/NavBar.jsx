@@ -12,7 +12,7 @@ const NavBar = (props) => {
 
     const handleBackButton = () => {
         if (window.location.pathname === "/categories") {
-            return
+            navigate(`/`)
         } else {
             navigate(-1)
         }
