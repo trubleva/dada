@@ -2,33 +2,17 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import Video from '../Video'
 import styles from './VideoList.module.scss';
-import { firestore} from "../../firebase";
-
 
 const VideoList = (props) => {
 
-  const [docs, setDocs] = useState([]);
-
-  const { filterChosen, user} = props;
+  const { filterChosen, user, videos} = props;
 
   const [filteredVideos, setFilteredVideos] = useState([]);
-
-  const getVideos = async () => {
-    await firestore.collection("activityIdeasVideos").get().then((response) => {
-       const documents = response.docs.map(d => d.data());
-       setDocs(documents);
-    })
-  }
-
-  useEffect(() => {
-    getVideos();
-  },[filterChosen])
-
   
   useEffect(() => {
 
     // MB - added filter to remove any copies made when favouriting (where uID exists)
-    let filteredVideos = docs.filter(v => v.uID == null);
+    let filteredVideos = videos.filter(v => v.uID == null);
    
     // first check if there are no filter categories selected... because we don't want to filter when there aren't
     if (filterChosen) {
@@ -42,7 +26,7 @@ const VideoList = (props) => {
     // Update the videos in state so the page re-renders
     setFilteredVideos(videoElements);
 
-  }, [filterChosen,docs,user]);
+  }, [filterChosen, videos, user]);
 
 
 
