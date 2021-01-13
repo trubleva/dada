@@ -15,7 +15,7 @@ const Categories = () => {
         <div className={styles.gridContainer}>
           {cardsArr.map((card) => {
             return (
-              <Link to={card.path} className={styles.card}>
+              <Link to={card.path} className={styles.card} key={card.path}>
                 <div className={styles.titleSubheaderContainer}>
                   <h2>{card.title}</h2>
                   <p className={styles.cardSubHeader}>{card.info}</p>

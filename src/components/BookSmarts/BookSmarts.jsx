@@ -11,7 +11,7 @@ const BookSmarts = (props) => {
       </header>
       <section className={styles.pageContainer}>
         {props.docs.map((doc) => {
-          return <BookSmartCard doc={doc} />;
+          return <BookSmartCard doc={doc} key={`book${doc.BookId}`}/>;
         })}
       </section>
       <BottomNavBar />

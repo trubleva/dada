@@ -18,7 +18,7 @@ const SOS = () => {
           {SOScardsArr.map((card) => {
             return (
 
-                <Link className={styles.card} to={card.path}>
+                <Link className={styles.card} to={card.path} key={card.path}>
                   <div className={styles.titleWrapper}>
                     <h2>{card.title}</h2>
                   </div>
