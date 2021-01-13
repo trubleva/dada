@@ -14,8 +14,9 @@
   align-items: center;
   align-content: center;
   background-color: $offWhite;
-  width: 90%;
+  width: 100%;
   margin: auto;
+  padding: 0 5%;
   img {
     width: 166px;
   }
@@ -106,6 +107,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  a {
+    color: $backgroundColor;
+    text-decoration: none;
+  }
 }
 
 .listTitle {
