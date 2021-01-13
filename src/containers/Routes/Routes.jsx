@@ -29,32 +29,71 @@ const Routes = (props) => {
 
     const user = props.user;
 
-    const [docs, setDocs] = useState([]);
+    const [bookSmarts, setbookSmarts] = useState([]);
+    const [articles, setArticles] = useState([]);
+    const [videos, setVideos] = useState([]);
+    const [upYourGameMainPage, setUpYourGameMainPage] = useState([]);
+    const [upYourGameMostDiscussed, setUpYourGameMostDiscussed] = useState([]);
+
+    // firestore calls
+    const getBookSmarts = () => {
+        firestore.collection("booksmarts").get()
+            .then((response) => {
+                const documents = response.docs.map((d) => d.data());
+                setbookSmarts(documents);
+            });
+    }
+
+    const getArticles = () => {
+        firestore.collection("activityIdeas").get()
+            .then((response) => {
+                const documents = response.docs.map(d => d.data());
+                setArticles(documents);
+            });
+    }
+
+    const getVideos = () => {
+        firestore.collection("activityIdeasVideos").get()
+            .then((response) => {
+                const documents = response.docs.map(d => d.data());
+                setVideos(documents);
+            });
+    }
+
+    const getUpYourGameMainPage = () => {
+        firestore.collection("upYourGameMainPage").get()
+            .then((response) => {
+                const documents = response.docs.map(d => d.data());
+                setUpYourGameMainPage(documents) 
+            });
+    }
+
+    const getUpYourGameMostDiscussed = () => {
+        firestore.collection("upYourGameMostDiscussed").get()
+            .then((response) => {
+                const documents = response.docs.map(d => d.data());
+                setUpYourGameMostDiscussed(documents) 
+            });
+    } 
 
     useEffect(() => {
-        const getBookSmarts = () => {
-            firestore
-                .collection("booksmarts")
-                .get()
-                .then((response) => {
-                    const documents = response.docs.map((d) => d.data());
-                    setDocs(documents);
-                });
-        };
-
         getBookSmarts();
+        getArticles();
+        getVideos();
+        getUpYourGameMainPage();
+        getUpYourGameMostDiscussed();
     }, []);
 
     return (
         <Router>
-            <ActivityIdeas path="categories/activity-ideas" user={user} />
+            <ActivityIdeas path="categories/activity-ideas" user={user} articles={articles} videos={videos} />
             <AddChick path="add-chick" user={user} />
             <AddChickAge path="add-chick-age/:chickName/:toggleGender" user={user} />
             <Aggression path="categories/sos/aggression" user={user} />
             <ArticleReader path="categories/activity-ideas/article-reader/:artID" user={user} />
-            <BookInfo path="categories/book-smarts/book-info/:BookId" docs={docs} user={user} />
-            <BookInsights path="categories/book-smarts/book-info/:BookId/book-insight/:insightID" docs={docs} user={user} />
-            <BookSmarts path="categories/book-smarts" docs={docs} user={user} />
+            <BookInfo path="categories/book-smarts/book-info/:BookId" docs={bookSmarts} user={user} />
+            <BookInsights path="categories/book-smarts/book-info/:BookId/book-insight/:insightID" docs={bookSmarts} user={user} />
+            <BookSmarts path="categories/book-smarts" docs={bookSmarts} user={user} />
             <Categories path="categories" user={user} />
             <Favorites path="favorites" user={user} />
             <Login path="login-page" user={user} handleUser={props.handleUser}/>
@@ -68,7 +107,7 @@ const Routes = (props) => {
             <Tantrums path="categories/sos/tantrums" user={user} />
             <Welcome path="welcome" user={user} />
             <Whining path="categories/sos/whining" user={user} />
-            <UpYourGame path="categories/up-your-game" user={user} />
+            <UpYourGame path="categories/up-your-game" user={user}  docs={upYourGameMainPage} subDocs={upYourGameMostDiscussed}/>
             <ProfileSignIn path="/profile-sign-in" />
         </Router>
     )

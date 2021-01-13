@@ -9,13 +9,12 @@ const ActivityIdeas = (props) => {
   const [filterChosen, setFilterChosen] = useState("");
   const [toggleList, setToggleList] = useState(true);
 
-  
-
   const user = props.user;
 
+
   const showClickedList = toggleList ?
-    <VideoList filterChosen={filterChosen} user={user} /> :
-    <ArticleList filterChosen={filterChosen} user={user} />
+    <VideoList filterChosen={filterChosen} user={user} videos={props.videos} /> :
+    <ArticleList filterChosen={filterChosen} user={user} articles={props.articles} />
 
   const showButtons = toggleList ?
     <>

@@ -2,30 +2,9 @@ import React from "react";
 import Styles from "./UpYourGame.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BottomNavBar from "../BottomNavBar";
-import {firestore} from "../../firebase";
-import { useEffect, useState } from 'react';
 
-const UpYourGame = () => {
-  const [docs, setDocs] = useState([]);
-  const [subDocs, setSubDocs] = useState([]);
-  const getUpYourGameMainPage = () => {
-    firestore.collection("upYourGameMainPage").get().then((response) => {
-      const documents = response.docs.map(d => d.data());
-      setDocs(documents) 
-    })
-  } 
-  useEffect (() => {
-    getUpYourGameMainPage();
-  }, [])
-  const getUpYourGameMostDiscussed = () => {
-    firestore.collection("upYourGameMostDiscussed").get().then((response) => {
-      const documents = response.docs.map(d => d.data());
-      setSubDocs(documents) 
-    })
-  } 
-  useEffect (() => {
-    getUpYourGameMostDiscussed();
-  }, [])
+const UpYourGame = ({docs, subDocs}) => {
+
   return (
     <>
     <header className={Styles.smHeader}>
@@ -33,8 +12,6 @@ const UpYourGame = () => {
     </header>
 
     <main className={Styles.pageContainer}> 
-
-    
 
       <div className={Styles.articleContainer}>
       {docs.map((doc) => {

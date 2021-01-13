@@ -28,8 +28,7 @@ const NavBar = (props) => {
                     <div className={styles.faContainer}>
                         <FontAwesomeIcon icon={faChevronLeft} onClick={handleBackButton} className={styles.backButton} />
                     </div>
-                    <div className={styles.faContainer} id={styles.ellipsesContainer} openSideBar={openSideBar}
-                        onClick={() => setOpenSideBar(!openSideBar)}>
+                    <div className={styles.faContainer} id={styles.ellipsesContainer} onClick={() => setOpenSideBar(!openSideBar)}>
                         <FontAwesomeIcon onClick={searchAlert} icon={faSearch} className={styles.ellipses} />
                         <FontAwesomeIcon
                             icon={faEllipsisV}
