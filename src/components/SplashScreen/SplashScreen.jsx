@@ -3,13 +3,19 @@ import styles from "./SplashScreen.module.scss";
 import splash from "../../assets/img/DadaLogoNavy.svg";
 import DeviceMockup from "../../assets/img/DeviceMockup.svg";
 import AllDevices from "../../assets/img/Landing/AllDevices.svg";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import IdeaPenguin from "../../assets/img/Landing/IdeaPenguin.svg";
 import AngryPenguin from "../../assets/img/Landing/AngryPenguin.svg";
 import ReadingPenguin from "../../assets/img/Landing/ReadingPenguin.svg";
 import LiftingPenguin from "../../assets/img/Landing/LiftingPenguin.svg";
 
-const LandingPage = () => {
+
+const LandingPage = (props) => {
+  const { user } = props;
+  
+  const handleNoUser = () => {
+    (user !== null) ? navigate("/categories") : navigate("/add-chick")
+  }
 
   return (
     <div className={styles.noNav}>
@@ -48,9 +54,7 @@ const LandingPage = () => {
                 We want to empower fathers to parent with confidence and enjoy
                 more quality time with their kids.
               </p>
-              <Link to="/categories">
-                <button className={styles.secondaryBtn}>Get Dadvice</button>
-              </Link>
+                <button className={styles.secondaryBtn} onClick={handleNoUser}>Get Dadvice</button>
             </div>
           </div>
         </div>
