@@ -9,8 +9,9 @@ const ActivityIdeas = (props) => {
   const [filterChosen, setFilterChosen] = useState("");
   const [toggleList, setToggleList] = useState(true);
 
-  const user = props.user;
+  
 
+  const user = props.user;
 
   const showClickedList = toggleList ?
     <VideoList filterChosen={filterChosen} user={user} /> :

@@ -54,7 +54,13 @@ const LandingPage = (props) => {
                 We want to empower fathers to parent with confidence and enjoy
                 more quality time with their kids.
               </p>
+              
                 <button className={styles.secondaryBtn} onClick={handleNoUser}>Get Dadvice</button>
+                <Link to="/categories">
+                  Get Dadvice
+                </Link>
+              </button>
+
             </div>
           </div>
         </div>
@@ -97,9 +103,11 @@ const LandingPage = (props) => {
         </ul>
       </div>
       <div className={styles.pageCont}>
-        <Link to="/sign-up">
-          <button className={styles.secondaryBtn}>Sign Up</button>
-        </Link>
+        <button className={styles.secondaryBtn}>
+          <Link to="/sign-up">
+            Sign Up
+          </Link>
+        </button>
       </div>
       <div className={styles.bottomTextCont}>
         <div className={styles.bottomCont}>

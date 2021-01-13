@@ -1,3 +1,5 @@
+@import '../abstracts/variables';
+
 .smHeader {
     display: flex;
     min-height: 10vh;
@@ -11,6 +13,8 @@
         height: 10vh;
         align-items: center;
         font-size: 18px;
+        color: $backgroundColor;
+        z-index: 1;
     }
     box-shadow: 0px 2px 2.62px rgba(0, 0, 0, 0.23);
 }
