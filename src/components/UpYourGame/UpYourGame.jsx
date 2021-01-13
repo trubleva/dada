@@ -2,8 +2,6 @@ import React from "react";
 import Styles from "./UpYourGame.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BottomNavBar from "../BottomNavBar";
-import {firestore} from "../../firebase";
-import { useEffect, useState } from 'react';
 
 const UpYourGame = ({docs, subDocs}) => {
 
@@ -14,8 +12,6 @@ const UpYourGame = ({docs, subDocs}) => {
     </header>
 
     <main className={Styles.pageContainer}> 
-
-    
 
       <div className={Styles.articleContainer}>
       {docs.map((doc) => {
