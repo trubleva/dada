@@ -11,12 +11,11 @@ const NavBar = (props) => {
     const [openSideBar, setOpenSideBar] = useState(false);
 
     const handleBackButton = () => {
-        if (window.location.pathname === "/categories") {
+        if (window.location.pathname === "/categories" || window.location.pathname === "/welcome") {
             navigate(`/`)
         } else {
             navigate(-1)
         }
-
     }
     const searchAlert = () => {
         alert('Searchbar functionality to be added in a future update')
