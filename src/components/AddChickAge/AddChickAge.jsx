@@ -48,7 +48,7 @@ const handleNextPageSplash = () => {
 
       </header>
 
-      <h2>How old is {currentName}?</h2>
+      <h2>Chick's age{currentName}?</h2>
 
       <div className={styles.ageClicker}>
         <button className={styles.minusButton} onClick={decreaseAge}>-</button>

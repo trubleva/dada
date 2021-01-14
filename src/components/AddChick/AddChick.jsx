@@ -20,7 +20,7 @@ const AddChick = () => {
       <form className={styles.formContainer}>
         <div className={styles.inputContainer}>
           <label for="name"></label>
-          <input type="text" onInput={nameInput} placeholder="Chicks name..." />
+          <input type="text" onInput={nameInput} placeholder="Chick's name..." />
         </div>
         <div className={styles.imageContainer}>
           <button
