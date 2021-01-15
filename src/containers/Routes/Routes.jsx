@@ -27,7 +27,7 @@ import RegisteredUserProfile from "../../components/RegisteredUserProfile";
 
 const Routes = (props) => {
 
-    const user = props.user;
+    const {user, userData} = props;
 
     const [bookSmarts, setbookSmarts] = useState([]);
     const [articles, setArticles] = useState([]);
@@ -38,7 +38,7 @@ const Routes = (props) => {
     // firestore calls
     const getBookSmarts = () => {
         firestore.collection("booksmarts").get()
-            .then((response) => {
+            .then(response => {
                 const documents = response.docs.map((d) => d.data());
                 setbookSmarts(documents);
             });
@@ -46,7 +46,7 @@ const Routes = (props) => {
 
     const getArticles = () => {
         firestore.collection("activityIdeas").get()
-            .then((response) => {
+            .then(response => {
                 const documents = response.docs.map(d => d.data());
                 setArticles(documents);
             });
@@ -54,7 +54,7 @@ const Routes = (props) => {
 
     const getVideos = () => {
         firestore.collection("activityIdeasVideos").get()
-            .then((response) => {
+            .then(response => {
                 const documents = response.docs.map(d => d.data());
                 setVideos(documents);
             });
@@ -62,19 +62,19 @@ const Routes = (props) => {
 
     const getUpYourGameMainPage = () => {
         firestore.collection("upYourGameMainPage").get()
-            .then((response) => {
+            .then(response => {
                 const documents = response.docs.map(d => d.data());
-                setUpYourGameMainPage(documents) 
+                setUpYourGameMainPage(documents); 
             });
     }
 
     const getUpYourGameMostDiscussed = () => {
         firestore.collection("upYourGameMostDiscussed").get()
-            .then((response) => {
+            .then(response => {
                 const documents = response.docs.map(d => d.data());
-                setUpYourGameMostDiscussed(documents) 
+                setUpYourGameMostDiscussed(documents);
             });
-    } 
+    }
 
     useEffect(() => {
         getBookSmarts();
@@ -86,7 +86,7 @@ const Routes = (props) => {
 
     return (
         <Router>
-            <ActivityIdeas path="categories/activity-ideas" user={user} articles={articles} videos={videos} />
+            <ActivityIdeas path="categories/activity-ideas" user={user} userData={userData} articles={articles} videos={videos} />
             <AddChick path="add-chick" user={user} />
             <AddChickAge path="add-chick-age/:chickName/:toggleGender" user={user} />
             <Aggression path="categories/sos/aggression" user={user} />

@@ -4,25 +4,24 @@ import GirlChick from "../../assets/img/AddChick/GirlChick.svg";
 import BoyChick from "../../assets/img/AddChick/BoyChick.svg";
 import { navigate } from "@reach/router";
 import BottomNavBar from '../BottomNavBar/BottomNavBar';
-
-
+import { firestore } from "../../firebase";
 
 const AddChickAge = (props) => {
   const [currentName, setCurrentName] = useState("");
   const [chickAge, setChickAge ] = useState(0);
   const [gender, setGender] = useState();
   
-  const {chickName, toggleGender} = props;
+  const {chickName, toggleGender, user} = props;
 
   useEffect(() => {
     setCurrentName(chickName);
-}, [chickName])
+  }, [chickName])
 
-useEffect(() => {
-  if(gender !==null || undefined){
-    setGender(toggleGender);
-  }
-},[gender, toggleGender ])
+  useEffect(() => {
+    if(gender !==null || undefined){
+      setGender(toggleGender);
+    }
+  },[gender, toggleGender ])
 
 
 
@@ -35,9 +34,20 @@ useEffect(() => {
       setChickAge(chickAge => chickAge - 1);
     } 
   }
-const handleNextPageSplash = () => {
-  navigate("/categories")
-}
+
+  const handleNextPageSplash = () => {
+    if(user !== null){
+      firestore.collection("users").doc(user.uid).collection("chicks").doc(currentName).set({
+        name: chickName,
+        age: chickAge,
+        gender: gender
+      })
+      .then(() => console.log('chick registered'))
+      .catch(error => console.log(error))
+    }
+
+    navigate("/categories");
+  }
 
 
   return (
