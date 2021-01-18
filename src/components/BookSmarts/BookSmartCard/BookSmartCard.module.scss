@@ -25,13 +25,13 @@
       width: 100%;
 
       .bookTitle {
-        font-size: 0.8rem;
+        font-size: 1rem;
         font-weight: 700;
         padding: 0;
       }
 
       .bookAuthor {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         padding-top: 7px;
         margin-top: 10px;
       }
@@ -74,17 +74,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    margin: 15px 0;
-
+    max-width: 65px;
+    height: auto;
+    margin: 0;
     img {
       width: 100%;
+      border-radius: 3%;
     }
   }
 
   .rightChevron {
     visibility: hidden;
     font-size: 0;
+    color: $deepPurple;
   }
 }
 
@@ -95,7 +97,7 @@
     height: 150px;
 
     .bookInfoContainer {
-      width: 650px;
+      width: 75%;
 
       .bookSmartInfo {
         width: 500px;
@@ -129,13 +131,11 @@
     }
 
       .bookSmartImage {
-        height: 150px;
-        width: 140px;
-        margin-top: 0px;
+        height: 140px;
+        width: 12.5%;
         img {
           height: 140px;
           width: auto;
-          padding-bottom: 10px;
         }
       }
     
@@ -144,7 +144,7 @@
       display: flex;
       font-size: 35px;
       height: 150px;
-      width: 80px;
+      width: 12.5%;
       justify-content: center;
       align-items: center;
     }
