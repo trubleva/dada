@@ -29,12 +29,11 @@ const [currentBook, setCurrentBook] = useState(0);
       <>
         <header className={styles.smHeader}>
           <h1>
-            Book Smarts
+          {props.docs[currentBook].KeyInsights[currentInsight].insightTitle}
           </h1>
         </header>
         <div className={styles.pageContainer}>
           <div className={styles.pageContent}>
-            <h2>{props.docs[currentBook].KeyInsights[currentInsight].insightTitle}</h2>
             <p className={styles.paragraph}>
               {props.docs[currentBook].KeyInsights[currentInsight].insightRead}
             </p>
@@ -42,7 +41,7 @@ const [currentBook, setCurrentBook] = useState(0);
           <div className={styles.btnContainer}>
             <Link to={`../../book-insight/${count}`}>
               <button className={styles.secondaryBtn} onClick={nextInsight}>
-                Next Highlight
+                Next Insight
               </button>
             </Link>
           </div>
