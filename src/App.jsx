@@ -14,18 +14,8 @@ export const App = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log('there is a user');
+        getUserData();
         setUser(user);
-
-        firestore.collection("users").doc(user.uid).get()
-            .then(response => {
-                let userData = response.data();
-                firestore.collection(`users/${user.uid}/chicks`).get()
-                  .then(response => {
-                    const documents = response.docs.map(d => d.data());
-                    userData = {...userData, chicks: documents}
-                    setUserData(userData);
-                  });
-            }); 
       } else {
         console.log('no user')
         setUser(null);
@@ -33,14 +23,29 @@ export const App = () => {
     });
   }
 
+  const getUserData = () => {
+    if(user){
+      firestore.collection("users").doc(user.uid).get()
+      .then(response => {
+        let userDataUpdate = response.data();
+        firestore.collection(`users/${user.uid}/chicks`).get()
+          .then(response => {
+            const documents = response.docs.map(d => d.data());
+            userDataUpdate = {...userData, chicks: documents};
+            setUserData(userDataUpdate);
+          });
+      });
+    }
+  }
+
   useEffect(() => {
     checkForUser();
-  },[])
-  
+  },[]);
+
   return (
     <>
         <NavBar user={user} />
-        <Routes user={user} handleUser={setUser} userData={userData} />
+        <Routes user={user} handleUser={setUser} userData={userData} getUserData={getUserData} />
     </> 
   )
 }

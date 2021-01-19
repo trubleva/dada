@@ -27,7 +27,7 @@ import RegisteredUserProfile from "../../components/RegisteredUserProfile";
 
 const Routes = (props) => {
 
-    const {user, userData} = props;
+    const {user, userData, getUserData} = props;
 
     const [bookSmarts, setbookSmarts] = useState([]);
     const [articles, setArticles] = useState([]);
@@ -88,7 +88,7 @@ const Routes = (props) => {
         <Router>
             <ActivityIdeas path="categories/activity-ideas" user={user} userData={userData} articles={articles} videos={videos} />
             <AddChick path="add-chick" user={user} />
-            <AddChickAge path="add-chick-age/:chickName/:toggleGender" user={user} />
+            <AddChickAge path="add-chick-age/:chickName/:toggleGender" user={user} getUserData={getUserData} />
             <Aggression path="categories/sos/aggression" user={user} />
             <ArticleReader path="categories/activity-ideas/article-reader/:artID" user={user} />
             <BookInfo path="categories/book-smarts/book-info/:BookId" docs={bookSmarts} user={user} />

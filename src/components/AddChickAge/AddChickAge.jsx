@@ -11,7 +11,7 @@ const AddChickAge = (props) => {
   const [chickAge, setChickAge ] = useState(0);
   const [gender, setGender] = useState();
   
-  const {chickName, toggleGender, user} = props;
+  const {chickName, toggleGender, user, getUserData} = props;
 
   useEffect(() => {
     setCurrentName(chickName);
@@ -42,7 +42,10 @@ const AddChickAge = (props) => {
         age: chickAge,
         gender: gender
       })
-      .then(() => console.log('chick registered'))
+      .then(() => {
+        console.log('chick registered');
+        getUserData();
+      })
       .catch(error => console.log(error))
     }
 
