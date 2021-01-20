@@ -19,12 +19,12 @@
         .navBarIcons {
 
             &:hover {
-                fill: $navyBlue;
+                fill: $deepPurple;
                 cursor: pointer;
             }
         }
         .navBarIcons.toggled {
-            fill: $navyBlue;
+            fill: $deepPurple;
         }
     }
 }
