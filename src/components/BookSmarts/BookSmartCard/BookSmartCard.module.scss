@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  height: 110px;
+  min-height: 110px;
   margin: 0 auto;
   margin-top: 15px;
   padding-bottom: 5px;
@@ -28,6 +28,7 @@
         font-size: 1rem;
         font-weight: 700;
         padding: 0;
+        
       }
 
       .bookAuthor {
