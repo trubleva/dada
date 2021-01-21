@@ -11,14 +11,18 @@ const BookSmartCard = (props) => {
   const { BookId, Title, Author, publishDate, Img } = props.doc;
 
   const changeCount = () => {
-    count === 0 ? setCount(addCount => addCount + 1) : setCount(addCount => addCount - 1);
-}
+    count === 0
+      ? setCount((addCount) => addCount + 1)
+      : setCount((addCount) => addCount - 1);
+  };
 
   return (
     <section className={styles.cardContainer}>
       <div className={styles.bookInfoContainer}>
         <div className={styles.bookSmartInfo}>
-          <h2 className={styles.bookTitle}>{Title}</h2>
+          <Link to={`book-info/${BookId}`} doc={props.doc}>
+            <h2 className={styles.bookTitle}>{Title}</h2>
+          </Link>
           <p className={styles.bookAuthor}>
             {Author}, {publishDate}
           </p>
@@ -31,19 +35,12 @@ const BookSmartCard = (props) => {
         </div>
       </div>
 
-      <Link
-        to={`book-info/${BookId}`}
-        doc={props.doc}
-        
-      >
+      <Link to={`book-info/${BookId}`} doc={props.doc}>
         <div className={styles.bookSmartImage}>
           <img src={Img} alt="book-cover" />
         </div>
       </Link>
-      <Link
-        to={`book-info/${BookId}`}
-        doc={props.doc}
-      ></Link>
+      <Link to={`book-info/${BookId}`} doc={props.doc}></Link>
       <Link
         to={`book-info/${BookId}`}
         doc={props.doc}

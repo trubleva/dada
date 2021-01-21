@@ -3,9 +3,6 @@ import styles from "./AddChickAge.module.scss";
 import GirlChick from "../../assets/img/AddChick/GirlChick.svg";
 import BoyChick from "../../assets/img/AddChick/BoyChick.svg";
 import { navigate } from "@reach/router";
-import BottomNavBar from '../BottomNavBar/BottomNavBar';
-
-
 
 const AddChickAge = (props) => {
   const [currentName, setCurrentName] = useState("");
@@ -57,9 +54,6 @@ const handleNextPageSplash = () => {
       </div>
 
       <button onClick={handleNextPageSplash}type="submit" className={styles.secondaryBtn}>Next</button>
-
-      
-      <BottomNavBar />
     </div>
   );
 };
