@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import Article from '../Article/Article';
 import styles from './ArticleList.module.scss';
 
-const ArticleList = ({filterChosen, user, userData, articles}) => {
-
+const ArticleList = ({filterChosen, user, userData, tempChickAge, articles}) => {
   // state
   const [filteredArticles, setFilteredArticles] = useState([]);
  
@@ -17,18 +16,24 @@ const ArticleList = ({filterChosen, user, userData, articles}) => {
       filteringArticles = filteringArticles.filter(a => a.keywords.indexOf(filterChosen) > -1);
     }
 
-    if(user !== null){
+    if(userData !== null && userData !== undefined){
+      if(userData.chicks.length){
+          const ages = userData.chicks.map(chick => chick.age);
 
-        const ages = userData.chicks.map(chick => chick.age).sort((a,b) => {return a-b});
-
-        filteringArticles = filteringArticles.filter(article => {
-          for(let i=0; i<ages.length; i++){
-            if(article.ageRange[0] <= ages[i] && article.ageRange[1] >= ages[i]){
-              return article;
+          filteringArticles = filteringArticles.filter(article => {
+            for(let i=0; i<ages.length; i++){
+              if(article.ageRange[0] <= ages[i] && article.ageRange[1] >= ages[i]){
+                return article;
+              }
             }
+          });
+      }
+    } else if (tempChickAge !== null && tempChickAge !== undefined){
+      filteringArticles = filteringArticles.filter(article => {
+          if(article.ageRange[0] <= tempChickAge && article.ageRange[1] >= tempChickAge){
+            return article;
           }
-        });
-
+      });
     }
 
     // map filtered articles and render article component, passing doc, key and user

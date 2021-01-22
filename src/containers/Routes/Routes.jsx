@@ -34,6 +34,7 @@ const Routes = (props) => {
     const [videos, setVideos] = useState([]);
     const [upYourGameMainPage, setUpYourGameMainPage] = useState([]);
     const [upYourGameMostDiscussed, setUpYourGameMostDiscussed] = useState([]);
+    const [tempChickAge, setTempChickAge] = useState();
 
     // firestore calls
     const getBookSmarts = () => {
@@ -76,6 +77,10 @@ const Routes = (props) => {
             });
     }
 
+    const getTempChickAge = (chickAge) => {
+        setTempChickAge(chickAge);
+    }
+
     useEffect(() => {
         getBookSmarts();
         getArticles();
@@ -86,9 +91,9 @@ const Routes = (props) => {
 
     return (
         <Router>
-            <ActivityIdeas path="categories/activity-ideas" user={user} userData={userData} articles={articles} videos={videos} />
+            <ActivityIdeas path="categories/activity-ideas" user={user} userData={userData} tempChickAge={tempChickAge} articles={articles} videos={videos} />
             <AddChick path="add-chick" user={user} />
-            <AddChickAge path="add-chick-age/:chickName/:toggleGender" user={user} getUserData={getUserData} />
+            <AddChickAge path="add-chick-age/:chickName/:toggleGender" user={user} getUserData={getUserData} getTempChickAge={getTempChickAge} />
             <Aggression path="categories/sos/aggression" user={user} />
             <ArticleReader path="categories/activity-ideas/article-reader/:artID" user={user} />
             <BookInfo path="categories/book-smarts/book-info/:BookId" docs={bookSmarts} user={user} />
@@ -96,7 +101,7 @@ const Routes = (props) => {
             <BookSmarts path="categories/book-smarts" docs={bookSmarts} user={user} />
             <Categories path="categories" user={user} />
             <Favorites path="favorites" user={user} />
-            <Login path="login-page" user={user} handleUser={props.handleUser}/>
+            <Login path="login-page" user={user} handleUser={props.handleUser} getUserData={getUserData}/>
             <Rejection path="categories/sos/rejection" user={user} />
             <RegisteredUserProfile path ="/registereduserprofile" user={user} />
             <Screaming path="categories/sos/screaming" user={user} />

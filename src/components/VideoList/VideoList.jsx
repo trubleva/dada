@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Video from '../Video'
 import styles from './VideoList.module.scss';
 
-const VideoList = ({filterChosen, user, userData, videos}) => {
+const VideoList = ({filterChosen, user, userData, tempChickAge, videos}) => {
 
   const [filteredVideos, setFilteredVideos] = useState([]);
   
@@ -17,16 +17,23 @@ const VideoList = ({filterChosen, user, userData, videos}) => {
       // take the videos and filter them if they match the fitlers we have     
       filteringVideos = filteringVideos.filter(v => v.keywords.indexOf(filterChosen) > -1 );
     }
+    if(userData !== null && userData !== undefined){
+      if(userData.chicks.length){
+        const ages = userData.chicks.map(chick => chick.age);
 
-    if(user !== null){
-      const ages = userData.chicks.map(chick => chick.age).sort((a,b) => {return a-b});
-
+        filteringVideos = filteringVideos.filter(videos => {
+          for(let i=0; i<ages.length; i++){
+            if(videos.ageRange[0] <= ages[i] && videos.ageRange[1] >= ages[i]){
+              return videos;
+            }
+          }
+        });
+      }
+    } else if (tempChickAge !== null && tempChickAge !== undefined){
       filteringVideos = filteringVideos.filter(videos => {
-        for(let i=0; i<ages.length; i++){
-          if(videos.ageRange[0] <= ages[i] && videos.ageRange[1] >= ages[i]){
+          if(videos.ageRange[0] <= tempChickAge && videos.ageRange[1] >= tempChickAge){
             return videos;
           }
-        }
       });
     }
 
