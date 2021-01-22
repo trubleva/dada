@@ -3,7 +3,6 @@ import styles from "./AddChickAge.module.scss";
 import GirlChick from "../../assets/img/AddChick/GirlChick.svg";
 import BoyChick from "../../assets/img/AddChick/BoyChick.svg";
 import { navigate } from "@reach/router";
-import BottomNavBar from '../BottomNavBar/BottomNavBar';
 import { firestore } from "../../firebase";
 
 const AddChickAge = (props) => {
@@ -71,9 +70,6 @@ const AddChickAge = (props) => {
       </div>
 
       <button onClick={handleNextPageSplash}type="submit" className={styles.secondaryBtn}>Next</button>
-
-      
-      <BottomNavBar />
     </div>
   );
 };

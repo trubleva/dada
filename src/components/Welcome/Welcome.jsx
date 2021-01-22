@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Welcome.module.scss';
 import { Link } from '@reach/router';
 import Penguin from '../../assets/img/Welcome/WelcomePenguin.svg';
-import BottomNavBar from '../BottomNavBar/BottomNavBar';
 
 const Welcome = () => {
     return (
@@ -24,7 +23,6 @@ const Welcome = () => {
             </button>
             </Link>
         </div>
-        <BottomNavBar />
         </>
     )
 }

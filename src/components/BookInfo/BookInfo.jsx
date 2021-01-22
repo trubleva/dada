@@ -15,7 +15,7 @@ const BookInfo = (props) => {
     return (
       <>
         <header className={styles.smHeader}>
-          <h1>Book Smarts</h1>
+          <h1>{props.docs[currentBook].Title}</h1>
         </header>
         <div className={styles.pageContainer}>
           <section className={styles.bookOverview}>

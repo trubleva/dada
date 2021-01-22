@@ -6,25 +6,25 @@
     position: fixed;
     bottom: 0;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 8vh;
+    min-height: 8vh;
     background-color: $offWhite;
     box-shadow: 0px -2px 2.62px rgba(0, 0, 0, 0.23);
 
     .iconContainer {
-        padding: 20px;
+        padding: 10px;
 
         .navBarIcons {
 
             &:hover {
-                fill: $navyBlue;
+                fill: $deepPurple;
                 cursor: pointer;
             }
         }
         .navBarIcons.toggled {
-            fill: $navyBlue;
+            fill: $deepPurple;
         }
     }
 }
