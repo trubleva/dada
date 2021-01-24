@@ -9,7 +9,6 @@ const AddChick = () => {
   const [chickName, setChickName] = useState("");
   const nameInput = (e) => setChickName(e.target.value);
 
-
   return (
     <div className={styles.pageContainer}>
       <header className={styles.header}>
@@ -24,7 +23,7 @@ const AddChick = () => {
           <button
             className={styles.girlChickBtn}
             type="button"
-            onClick={() => setToggleGender(false)}
+            onClick={() => setToggleGender("female")}
           >
             <img src={GirlChick} alt="Penguin-placeholder-img" />
             <span>Girl</span>
@@ -32,7 +31,7 @@ const AddChick = () => {
           <button
             className={styles.boyChickBtn}
             type="button"
-            onClick={() => setToggleGender(true)}
+            onClick={() => setToggleGender("male")}
           >
             <img src={BoyChick} alt="Penguin-placeholder-img" />
             <span>Boy</span>

@@ -12,13 +12,14 @@ import { navigate } from '@reach/router';
 
 const SocialFollow = () => {
 
-  const goToSignInWithGoogle = async() => {
-   await firebase.auth().signInWithRedirect(provider)
-    navigate("/welcome")
+  const goToSignInWithGoogle = async () => {
+    await firebase.auth().signInWithRedirect(provider);
+    navigate("/welcome");
   }
 
   const goToSignInWithFacebook = () => {
-    firebase.auth().signInWithRedirect(providertwo)
+    firebase.auth().signInWithRedirect(providertwo);
+    navigate("/welcome");
   }
   
     return (

@@ -25,7 +25,7 @@
     .secondaryBtn {
       font-size: 20px;
       width: 100%;
-      height: 50px;
+      height: 40px;
       margin-bottom: 60px;
     }
   }
@@ -41,13 +41,18 @@
     .paragraph {
       font-size: 28px;
     }
-  }
   
-  .btnContainer {
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    .secondaryBtn {
-      font-size: 18px;
+  
+    .btnContainer {
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      .secondaryBtn {
+        position: relative;
+        left: 15%;
+        height: 45px;
+        width: 70%;
+        font-size: 18px;
+      }
     }
   }
 }
@@ -57,12 +62,17 @@
   .pageContainer {
     margin: 20px auto 0 auto;
     padding-bottom: 0px;
-  }
+  
 
-  .btnContainer {
-    padding-bottom: 10px;
-    .secondaryBtn {
-      font-size: 18px;
+    .btnContainer {
+      padding-bottom: 10px;
+      .secondaryBtn {
+        position: relative;
+        left: 25%;
+        height: 50px;
+        width: 50%;
+        font-size: 18px;
+      }
     }
   }
 }
