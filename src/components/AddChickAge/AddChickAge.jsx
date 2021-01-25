@@ -10,7 +10,7 @@ const AddChickAge = (props) => {
   const [chickAge, setChickAge ] = useState(0);
   const [gender, setGender] = useState();
   
-  const {chickName, toggleGender, user, getUserData, getTempChickAge} = props;
+  const {chickName, toggleGender, user, getUserData} = props;
 
   useEffect(() => {
     setCurrentName(chickName);
@@ -47,7 +47,7 @@ const AddChickAge = (props) => {
       })
       .catch(error => console.log(error))
     } else {
-      getTempChickAge(chickAge);
+      window.sessionStorage.setItem("tempChickAge", chickAge);
     }
     navigate("/categories");
   }

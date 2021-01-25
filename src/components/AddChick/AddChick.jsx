@@ -17,7 +17,7 @@ const AddChick = () => {
       <form className={styles.formContainer}>
         <div className={styles.inputContainer}>
           <label for="name"></label>
-          <input type="text" onInput={nameInput} placeholder="Chick's name..." />
+          <input type="text" onInput={nameInput} placeholder="Chick's name..." required />
         </div>
         <div className={styles.imageContainer}>
           <button

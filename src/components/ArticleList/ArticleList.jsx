@@ -3,9 +3,19 @@ import { useEffect, useState } from 'react';
 import Article from '../Article/Article';
 import styles from './ArticleList.module.scss';
 
-const ArticleList = ({filterChosen, user, userData, tempChickAge, articles}) => {
+const ArticleList = ({filterChosen, user, userData, articles}) => {
   // state
   const [filteredArticles, setFilteredArticles] = useState([]);
+  
+  const ageFilter = (article, ageArray) => {
+    // if any chick age matchs will return true
+    for(let i=0; i<ageArray.length; i++){
+      if(article.ageRange[0] <= ageArray[i] && article.ageRange[1] >= ageArray[i]){
+        return true;
+      }
+    }
+    return false;
+  }
  
   useEffect(() => {
     let filteringArticles = articles.filter(a => a.uID == null);
@@ -18,22 +28,12 @@ const ArticleList = ({filterChosen, user, userData, tempChickAge, articles}) => 
 
     if(userData !== null && userData !== undefined){
       if(userData.chicks.length){
-          const ages = userData.chicks.map(chick => chick.age);
-
-          filteringArticles = filteringArticles.filter(article => {
-            for(let i=0; i<ages.length; i++){
-              if(article.ageRange[0] <= ages[i] && article.ageRange[1] >= ages[i]){
-                return article;
-              }
-            }
-          });
+        const ageArray = userData.chicks.map(chick => chick.age);
+        filteringArticles = filteringArticles.filter(article => ageFilter(article, ageArray));
       }
-    } else if (tempChickAge !== null && tempChickAge !== undefined){
-      filteringArticles = filteringArticles.filter(article => {
-          if(article.ageRange[0] <= tempChickAge && article.ageRange[1] >= tempChickAge){
-            return article;
-          }
-      });
+    } else if (window.sessionStorage.getItem("tempChickAge") !== null && window.sessionStorage.getItem("tempChickAge") !== undefined){
+      const ageArray = [window.sessionStorage.getItem("tempChickAge")];
+      filteringArticles = filteringArticles.filter(article => ageFilter(article, ageArray));
     }
 
     // map filtered articles and render article component, passing doc, key and user
@@ -42,7 +42,7 @@ const ArticleList = ({filterChosen, user, userData, tempChickAge, articles}) => 
     // Update the Articles in our state so that the page re-renders....
     setFilteredArticles(articleElements);
 
-  }, [filterChosen, articles, user]);
+  }, [filterChosen, articles, user, userData]);
 
   // return
   return (
