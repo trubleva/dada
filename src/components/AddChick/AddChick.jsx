@@ -5,7 +5,7 @@ import BoyChick from "../../assets/img/AddChick/BoyChick.svg";
 import GirlChick from "../../assets/img/AddChick/GirlChick.svg";
 
 const AddChick = () => {
-  const [toggleGender, setToggleGender] = useState(false);
+  const [toggleGender, setToggleGender] = useState("female");
   const [chickName, setChickName] = useState("");
   const nameInput = (e) => setChickName(e.target.value);
 

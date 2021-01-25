@@ -57,7 +57,7 @@ const AddChickAge = (props) => {
     <div className={styles.pageContainer}>
       <header className={styles.header}>
 
-        <img src={gender ? BoyChick : GirlChick} alt="Penguin-placeholder-img"/> 
+        <img src={gender === 'male' ? BoyChick : GirlChick} alt="Penguin-placeholder-img"/> 
 
       </header>
 
