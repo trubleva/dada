@@ -31,6 +31,7 @@ export const Login = (props) => {
 const getUser = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        props.getUserData();
         navigate("/categories");
       } else {
         return

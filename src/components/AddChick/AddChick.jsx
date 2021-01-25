@@ -5,10 +5,9 @@ import BoyChick from "../../assets/img/AddChick/BoyChick.svg";
 import GirlChick from "../../assets/img/AddChick/GirlChick.svg";
 
 const AddChick = () => {
-  const [toggleGender, setToggleGender] = useState(false);
+  const [toggleGender, setToggleGender] = useState("female");
   const [chickName, setChickName] = useState("");
   const nameInput = (e) => setChickName(e.target.value);
-
 
   return (
     <div className={styles.pageContainer}>
@@ -18,13 +17,13 @@ const AddChick = () => {
       <form className={styles.formContainer}>
         <div className={styles.inputContainer}>
           <label for="name"></label>
-          <input type="text" onInput={nameInput} placeholder="Chick's name..." />
+          <input type="text" onInput={nameInput} placeholder="Chick's name..." required />
         </div>
         <div className={styles.imageContainer}>
           <button
             className={styles.girlChickBtn}
             type="button"
-            onClick={() => setToggleGender(false)}
+            onClick={() => setToggleGender("female")}
           >
             <img src={GirlChick} alt="Penguin-placeholder-img" />
             <span>Girl</span>
@@ -32,7 +31,7 @@ const AddChick = () => {
           <button
             className={styles.boyChickBtn}
             type="button"
-            onClick={() => setToggleGender(true)}
+            onClick={() => setToggleGender("male")}
           >
             <img src={BoyChick} alt="Penguin-placeholder-img" />
             <span>Boy</span>

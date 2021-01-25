@@ -3,23 +3,24 @@ import styles from "./AddChickAge.module.scss";
 import GirlChick from "../../assets/img/AddChick/GirlChick.svg";
 import BoyChick from "../../assets/img/AddChick/BoyChick.svg";
 import { navigate } from "@reach/router";
+import { firestore } from "../../firebase";
 
 const AddChickAge = (props) => {
   const [currentName, setCurrentName] = useState("");
   const [chickAge, setChickAge ] = useState(0);
   const [gender, setGender] = useState();
   
-  const {chickName, toggleGender} = props;
+  const {chickName, toggleGender, user, getUserData} = props;
 
   useEffect(() => {
     setCurrentName(chickName);
-}, [chickName])
+  }, [chickName])
 
-useEffect(() => {
-  if(gender !==null || undefined){
-    setGender(toggleGender);
-  }
-},[gender, toggleGender ])
+  useEffect(() => {
+    if(gender !==null || undefined){
+      setGender(toggleGender);
+    }
+  },[gender, toggleGender ])
 
 
 
@@ -32,16 +33,31 @@ useEffect(() => {
       setChickAge(chickAge => chickAge - 1);
     } 
   }
-const handleNextPageSplash = () => {
-  navigate("/categories")
-}
+
+  const handleNextPageSplash = () => {
+    if(user !== null){
+      firestore.collection("users").doc(user.uid).collection("chicks").doc(currentName).set({
+        name: chickName,
+        age: chickAge,
+        gender: gender
+      })
+      .then(() => {
+        console.log('chick registered');
+        getUserData();
+      })
+      .catch(error => console.log(error))
+    } else {
+      window.sessionStorage.setItem("tempChickAge", chickAge);
+    }
+    navigate("/categories");
+  }
 
 
   return (
     <div className={styles.pageContainer}>
       <header className={styles.header}>
 
-        <img src={gender ? BoyChick : GirlChick} alt="Penguin-placeholder-img"/> 
+        <img src={gender === 'male' ? BoyChick : GirlChick} alt="Penguin-placeholder-img"/> 
 
       </header>
 

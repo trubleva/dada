@@ -2,11 +2,13 @@ import React, { useCallback, useRef, useEffect } from 'react'
 import styles from "./Register.module.scss"
 import { navigate } from '@reach/router'
 import SocialFollow from './SocialFollow';
-import firebase from "../../../firebase"
+import firebase, { firestore } from "../../../firebase"
 
 export const Register = () => {
-  const passwordRef = useRef()
-  const emailRef = useRef()
+
+  const passwordRef = useRef();
+  const emailRef = useRef();
+  const usernameRef = useRef();
 
   const handleSignUp = useCallback(async event => {
     event.preventDefault();
@@ -15,6 +17,11 @@ export const Register = () => {
       await firebase
         .auth()
         .createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
+          .then(res => {
+            firestore.collection("users").doc(res.user.uid).set({
+              name: usernameRef.current.value
+            })
+          });
     }
     catch (error) {
       alert(error)
@@ -51,6 +58,7 @@ export const Register = () => {
           id="username"
           placeholder="Name"
           name="username"
+          ref={usernameRef}
         />
         <label for="user-email"></label>
         <input
