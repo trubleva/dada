@@ -6,6 +6,16 @@ import styles from './VideoList.module.scss';
 const VideoList = ({filterChosen, user, userData, tempChickAge, videos}) => {
 
   const [filteredVideos, setFilteredVideos] = useState([]);
+
+  const ageFilter = (video, ageArray) => {
+    // if any chick age matchs will return true
+    for(let i=0; i<ageArray.length; i++){
+      if(video.ageRange[0] <= ageArray[i] && video.ageRange[1] >= ageArray[i]){
+        return true;
+      }
+    }
+    return false;
+  }
   
   useEffect(() => {
 
@@ -19,22 +29,12 @@ const VideoList = ({filterChosen, user, userData, tempChickAge, videos}) => {
     }
     if(userData !== null && userData !== undefined){
       if(userData.chicks.length){
-        const ages = userData.chicks.map(chick => chick.age);
-
-        filteringVideos = filteringVideos.filter(videos => {
-          for(let i=0; i<ages.length; i++){
-            if(videos.ageRange[0] <= ages[i] && videos.ageRange[1] >= ages[i]){
-              return videos;
-            }
-          }
-        });
+        const ageArray = userData.chicks.map(chick => chick.age);
+        filteringVideos = filteringVideos.filter(video => ageFilter(video, ageArray));
       }
-    } else if (tempChickAge !== null && tempChickAge !== undefined){
-      filteringVideos = filteringVideos.filter(videos => {
-          if(videos.ageRange[0] <= tempChickAge && videos.ageRange[1] >= tempChickAge){
-            return videos;
-          }
-      });
+    } else if (window.sessionStorage.getItem("tempChickAge") !== null && window.sessionStorage.getItem("tempChickAge") !== undefined){
+      const ageArray = [window.sessionStorage.getItem("tempChickAge")];
+      filteringVideos = filteringVideos.filter(video => ageFilter(video, ageArray));
     }
 
     // map filtered videos and render video component, passing doc, key and user
@@ -43,7 +43,7 @@ const VideoList = ({filterChosen, user, userData, tempChickAge, videos}) => {
     // Update the videos in state so the page re-renders
     setFilteredVideos(videoElements);
 
-  }, [filterChosen, videos, user]);
+  }, [filterChosen, videos, user, tempChickAge, userData]);
 
 
 
