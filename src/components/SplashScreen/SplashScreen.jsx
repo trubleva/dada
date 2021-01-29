@@ -101,7 +101,7 @@ const LandingPage = (props) => {
           </li>
         </ul>
       </div>
-      <div className={styles.pageCont}>
+      <div>
         <button className={styles.secondaryBtn}>
           <Link to="/sign-up">
             Sign Up
