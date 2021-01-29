@@ -18,7 +18,7 @@ const LandingPage = (props) => {
   }
 
   return (
-    <div className={styles.noNav}>
+    <div className={styles.splashContainer}>
       <div className={styles.splash}>
         <img src={splash} alt="splash" />
         <Link to="login-page">
