@@ -9,7 +9,7 @@
     display: flex;
     position: relative;
     justify-content: space-between;
-    height: 192px;
+    height: 220px;
     align-items: center;
     align-content: center;
     background-color: $offWhite;
@@ -43,20 +43,19 @@
 
   .pageCont {
     z-index: 202;
-    margin-top: -90px;
+    margin-top: -96px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+
   }
 
   .sloganCont {
     z-index: 202;
-    margin-top: -90px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
     margin-bottom: 40px;
   }
 
@@ -168,6 +167,7 @@
   }
 
   .bottomTextCont {
+    margin-top: 48px;
     background-color: #fffcdc;
     display: flex;
     flex-direction: column;
@@ -176,6 +176,7 @@
   }
 
   .bottomCont {
+
     display: flex;
     flex-direction: column;
     align-items: center;
