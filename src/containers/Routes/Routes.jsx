@@ -84,10 +84,6 @@ const Routes = (props) => {
         getUpYourGameMostDiscussed();
     }, []);
 
-    // const NavBarJSX = window.location.pathname.includes("/") ? <NavBar user={user} /> : null;
-
-    console.log(window.location.pathname);
-
     return (
         <Router>
             <ActivityIdeas path="categories/activity-ideas" user={user} userData={userData} articles={articles} videos={videos} />
