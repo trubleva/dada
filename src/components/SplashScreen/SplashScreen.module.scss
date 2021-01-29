@@ -17,6 +17,7 @@
     margin: auto;
     padding: 0 5%;
 
+
     img {
       width: 166px;
       position: absolute;
@@ -41,9 +42,9 @@
     flex-direction: column;
   }
 
-  .pageCont {
+  .pageCont {  
     z-index: 202;
-    margin-top: -96px;
+    //margin-top: -108px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -53,6 +54,7 @@
 
   .sloganCont {
     z-index: 202;
+    margin-top: -108px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -264,10 +266,12 @@
     }
 
     .phoneForTablet {
+      z-index: 303;
       display: inline;
     }
 
     .phoneForMobile {
+      z-index: 303;
       display: none;
     }
 
