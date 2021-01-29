@@ -43,14 +43,9 @@ export const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
-
-  const NavBarJSX = window.location.pathname === "???" ? null : <NavBar user={user} />;
-
-  console.log(window.location.pathname);
-
   return (
     <>
-        {NavBarJSX}
+        <NavBar user={user} />
         <Routes user={user} handleUser={setUser} userData={userData} getUserData={getUserData} />
     </> 
   )
