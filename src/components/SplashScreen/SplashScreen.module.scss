@@ -101,11 +101,13 @@
 
   .bold {
     font-weight: 500;
+    cursor: text;
   }
 
   .italics {
     font-weight: 300;
     font-style: italic;
+    cursor: text;
   }
 
   .textFathers {
@@ -143,6 +145,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: text;
 
     img {
       width: 150px;
